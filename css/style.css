@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100..800&family=Federant&display=swap');
+
+.federant-regular {
+    font-family: "Federant", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .anek-kannada {
+    font-family: "Anek Kannada", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  
+
+
+body {
+    font-family: "Anek Kannada" ;
+    margin: 0;
+    background-image: url("../image/horoscopebackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: #F0A5A5;
+}
+    
+
+.background-wrapper {
+    margin: 20rem 25rem;
+   max-width: 38%;
+   height: 30rem;
+   background-color: #5A3E79;
+   display: Flex;
+   flex-direction: column;
+   border-radius: 15px;
+   padding: 3rem;
+}
+
+h1 {
+    font-family: "Federant";
+    font-size: 3rem;
+    color: #F0A5A5;
+    margin: 0;
+}
+.choose-sign {
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+select {
+    /* display: flex; */
+    grid-row: 2/3;
+}
+
+label {
+  
+    /* margin: 2rem; */
+    padding: 2rem 0rem;
+}
+
+button {
+    background-color: #F0A5A5;
+    color: black; 
+}
+
+.rest {
+    margin: 1rem;
+    background-color: #F0A5A5;
+}
