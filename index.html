@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horoscopes</title>
-    <link rel="stylesheet" href="css/style.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horoscopes</title>
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-    <div class="background-wrapper">
-   <h1>Your Daily Horoscope</h1>
-    <label for="sign">What is Your Sign?</label>
-     <div class="choose-sign">
+  <div class="background-wrapper">
+    <h1>Your Daily Horoscope</h1>
+    <div class="choose-sign">
+      <form action="" method="get" id="form">
+        <label for="sign">What is Your Sign?</label>
         <select id="sign" name="sign" required>
-        </select> 
-    
-     <div class="button-wrapper">
-        <button onclick="showHoroscope()">Submit</button>
-        <div class="show-div">
-            <p class="your-sign"></p>
-            <p class=" your-horoscope"></p>
+          <option value="choose_option" disabled selected hidden>Please choose an option</option>
+        </select>
+        <div class="button-wrapper">
+          <input type="submit" name="submit" id="submit" value="Submit">
         </div>
-     </div>
+      </form>
+      <div class="hidden-div show-div">
+        <p class="your-sign"></p>
+        <p class=" your-horoscope"></p>
+      </div>
     </div>
-
-<div>
-    <input class="reset" type="reset" value="reset">
-</div>
-
-<!-- <script> src="data/data.js"</script> -->
-<script src="js/node.js" type="module">  </script>
-</div>
+    <div>
+      <input type="reset" name="reset" id="reset" value="Reset">
+    </div>
+    <script src="js/node.js" type="module"> </script>
+  </div>
 </body>
+
 </html>

@@ -28,14 +28,14 @@ body {
     
 
 .background-wrapper {
-    margin: 20rem 25rem;
-   max-width: 38%;
+    margin: auto;
+   width: 20rem;
    height: 30rem;
    background-color: #5A3E79;
    display: Flex;
    flex-direction: column;
    border-radius: 15px;
-   padding: 3rem;
+   padding: 2rem;
 }
 
 h1 {
@@ -44,28 +44,36 @@ h1 {
     color: #F0A5A5;
     margin: 0;
 }
-.choose-sign {
-    display:grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-}
-select {
-    /* display: flex; */
-    grid-row: 2/3;
-}
 
 label {
-  
-    /* margin: 2rem; */
-    padding: 2rem 0rem;
+    padding: .5rem;
 }
 
-button {
+.choose-sign {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#sign {
+    margin: 0;
+    border-radius: 10px;
+    width: 10rem;
+    max-height: 2rem;
+}
+
+
+input {
     background-color: #F0A5A5;
     color: black; 
+    margin: 0rem;
+    border-radius: 10px;
+    padding: .5rem;
 }
 
-.rest {
-    margin: 1rem;
-    background-color: #F0A5A5;
+.hidden-div {
+  margin: auto;
+  width: 15rem;
+  height: 20rem;
 }
+
