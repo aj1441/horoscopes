@@ -1,17 +1,23 @@
-// let bookList = data.results.books;
-// let newArray = [];
-// let list = document.getElementById("list");
+
 
 import horoscopeData from "../data/data.js";
 
 
 let signList = horoscopeData.horoscopes.astroSigns;
-let showHorsocope = horoscopeData.horoscopes.astroSigns[0].dailyHoroscope;
-let userArray = [];
-let sign = document.getElementById("sign");
-let showDiv = document.getElementsByClassName("show-div");
-// let singToPin = option.textcontent
-// var yourSign = documment.getElementsById("option");
+// let userHoroscope = horoscopeData.horoscopes.astroSigns.dailyHoroscope
+let showHoroscope = document.getElementById("userHoroscope");
+// let showSign = document.getElementById("yourSign");
+let form= document.getElementById("form");
+// let userSign;
+let display;
+// let newUserSign = document.getElementById("userSign")
+// console.log(showHoroscope)
+// console.log(showSign)
+
+
+
+
+
 
 
 function forEachTest() {
@@ -22,25 +28,88 @@ forEachTest()
 form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
-	event.preventDefault();
-	const  yourSign= new FormData(event.target);
-	const dataObject = Object.fromEntries(yourSign.entries());
-	//above is boiler plate code
-    userArray.push(dataObject);
-    console.log(userArray);
+    event.preventDefault();
+	const data = new FormData(event.target);
+	const dataObject = Object.fromEntries(data.entries());
     console.log(dataObject);
-	// form.reset();
-}
-function userHoroscope() {
+	//above is boiler plate code
+    form.reset();
+    let userSign = dataObject.sign;
+
     for (let item of signList) {
-        if (signList.sign === userArray) {
-            document.getElementsByClassName("your-sign").textContent = signList.sign;
+        if (item.sign === userSign){
+            let selectedSign=item.sign;
+            let selectedHoroscope = item.dailyHoroscope;
+        let horoscopeContainer =document.createElement("div");
+        horoscopeContainer.className = "horoscope-wrapper";
+        horoscopeContainer.innerHTML = `<div class="card" id="card">
+        <p class="selected-sign">Your sign is ${selectedSign}</p>
+        <p class="selected-horoscope">Your daily horoscope is: ${selectedHoroscope}</p>`
+
+        showHoroscope.appendChild(horoscopeContainer);
         }
-    }
+    // let userHoroscope = signList[userSign].dailyHoroscope;
+	// displayHoroscope ();
+    console.log(userSign);
+}
 }
 
 
+// i need a function to loop through signList and when item.sign is equal to userSign global variable; i want to then display in html "userSign" using textContent `Your sign is ${userSign}` and display to user item.dailyHoroscope in the html "userHoroscope" using textContent.
+// function displayHoroscope () {
+//     for (let item of signList) {
+//         if (item.sign === userSign){
+//             let selectedSign=item.sign;
+//             let selectedHoroscope = item.dailyHoroscope;
+//         let horoscopeContainer =document.createElement("div");
+//         horoscopeContainer.className = "horoscope-wrapper";
+//         horoscopeContainer.innerHTML = `<div class="card" id="card">
+//         <p class="selected-sign">Your sign is ${selectedSign}</p>
+//         <p class="selected-horoscope">Your daily horoscope is: ${selectedHoroscope}</p>`
 
+//         showHoroscope.appendChild(horoscopeContainer);
+//         // if (item.sign === userSign) {
+//         //     showSign.innerHTML = `Your sign is ${item.sign}`;
+//         //     showHoroscope.innerHTML = ${item.dailyHoroscope};
+//         // }
+//         // console.log(showSign)
+    
+// }
+// }
+// }
+// displayHoroscope ()
+
+
+// function userHoroscope () {
+//     for (let item of signList) {
+//         let sign = item.sign;
+//         let userHoroscope = item.dailyHoroscope;
+//         if (item === newUserArray) {
+//         let signSentence = `Your sign is ${sign}!`
+//         newUserSign.textContent = signSentence;
+//         document.getElementById("userHoroscope").textContent = userHoroscope;
+//         console.log(sign);
+//         console.log(userHoroscope);
+//         console.log(signSentence);
+//         }
+//     }
+// }
+
+// userHoroscope()
+
+
+// function userHoroscope() {
+//     for (let item of signList) {
+//         let signs = item.sign;
+//         if (signs === newUserArray) {
+//             document.getElementsById("userSign").textContent = signList.sign;
+//             document.getElementsById("userHoroscope").textContent = signList.dailyHoroscope;
+//         }
+//         console.log (userSign);
+//     }
+// }
+
+// userHoroscope()
 
 
 //submit function that grabs the value from the user and stores it in a variable
@@ -152,3 +221,4 @@ function userHoroscope() {
 // }
 
 // console.log(signList);
+
