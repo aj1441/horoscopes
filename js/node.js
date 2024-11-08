@@ -22,6 +22,8 @@ function onFormSubmit(event) {
     console.log(dataObject);
     form.reset();
     let userSign = dataObject.sign;
+     // Clear previous horoscope content before adding the new one
+     showHoroscope.innerHTML = '';
     for (let item of signList) {
         if (item.sign === userSign) {
             let selectedSign = item.sign;
@@ -33,6 +35,7 @@ function onFormSubmit(event) {
         <p class="selected-horoscope">Your daily horoscope is: ${selectedHoroscope}</p>`
 
             showHoroscope.appendChild(horoscopeContainer);
+            break;
         }
         console.log(userSign);
     }
